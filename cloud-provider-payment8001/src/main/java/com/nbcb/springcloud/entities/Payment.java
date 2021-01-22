@@ -11,8 +11,8 @@ import java.io.Serializable;
 
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor    //提供全参的构造方法
+@NoArgsConstructor    //提供无参的构造方法
 
 public class Payment implements Serializable {
     private Long id;
