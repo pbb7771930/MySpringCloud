@@ -6,14 +6,15 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-/*
-
+/**
+ * @auther zzyy
+ * @create 2020-02-18 17:22
  */
 @Data
-@AllArgsConstructor    //提供全参的构造方法
-@NoArgsConstructor    //提供无参的构造方法
-
-public class Payment implements Serializable {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Payment implements Serializable
+{
     private Long id;
     private String serial;
 }

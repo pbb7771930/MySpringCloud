@@ -16,15 +16,14 @@ import java.util.List;
 @Slf4j
 public class PaymentController {
 
-    @Resource  //bean的注入，同Autowired 有相同的功能
+    @Resource   //bean的注入，同Autowired 有相同的功能
     private PaymentService paymentService;
 
-    @Value("${server.port}")   //可以注入properties里面的配置项
+    @Value("${server.port}")  //可以注入properties里面的配置项
     private String serverPort;
 
     @Resource
     private DiscoveryClient discoveryClient;
-
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment){
@@ -36,7 +35,6 @@ public class PaymentController {
             return new CommonResult(444,"插入数据库失败",null);
         }
     }
-
     @GetMapping(value = "/payment/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
@@ -63,4 +61,5 @@ public class PaymentController {
         }
         return this.discoveryClient;
     }
+
 }
